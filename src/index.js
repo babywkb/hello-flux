@@ -26,15 +26,15 @@ const ResetButton = () => (
 
 const ActionHistory = ({history}) => (
     <ul>
-            {history.map(hst => (
-                <li>
-                    <label>
-                        {hst}
-                    </label>
-                </li>
-            ))}
-
+        {history.map(hst => (
+            <li>
+                <label>
+                    {hst}
+                </label>
+            </li>
+        ))}
     </ul>
+
 )
 
 const App = ({ count, history }) => (

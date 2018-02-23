@@ -24,11 +24,3 @@ export const reset = event => {
         payload: { value }
     });
 };
-
-export const showHistory = event => {
-    const value = '';
-    AppDispatcher.dispatch({
-        type: ActionTypes.RESET,
-        payload: { value }
-    });
-}

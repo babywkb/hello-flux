@@ -30,13 +30,13 @@ class CountStore extends ReduceStore {
 //履歴用Stoerを作る
 class HistoryStore extends ReduceStore {
     getInitialState() {
-        return ['なにもしてないよ','あらよっと'];
+        return ['アクション名１','アクション名２'];
     }
     reduce(state, { type, payload }) {
         switch (type) {
             case ActionTypes.SHOWHISTORY: {
                 const { value } = payload;
-                return state + value;
+                return state.push(value);
             }
             default:
                 return state;
