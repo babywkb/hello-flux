@@ -26,8 +26,8 @@ const ResetButton = () => (
 
 const ActionHistory = ({history}) => (
     <ul>
-        {history.map(hst => (
-            <li>
+        {history.map((hst,i) => (
+            <li key={i} >
                 <label>
                     {hst}
                 </label>
