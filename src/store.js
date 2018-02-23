@@ -1,6 +1,6 @@
 import { ReduceStore } from 'flux/utils';
 
-import CounterDispatcher from './dispatcher';
+import AppDispatcher from './dispatcher';
 import ActionTypes from './action-types';
 
 class CountStore extends ReduceStore {
@@ -27,4 +27,22 @@ class CountStore extends ReduceStore {
     }
 }
 
-export const countStore = new CountStore(CounterDispatcher);
+//履歴用Stoerを作る
+class HistoryStore extends ReduceStore {
+    getInitialState() {
+        return 'なにもしてないよ';
+    }
+    reduce(state, { type, payload }) {
+        switch (type) {
+            case ActionTypes.SHOWHISTORY: {
+                const { value } = payload;
+                return state + value;
+            }
+            default:
+                return state;
+        }
+    }
+}
+
+export const countStore = new CountStore(AppDispatcher);
+export const historyStore = new HistoryStore(AppDispatcher);

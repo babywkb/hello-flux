@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { increment,decrement, reset } from './actions';
 import { Container } from 'flux/utils';
-import { countStore } from './store';
+import { countStore,historyStore } from './store';
 
 const Counter = ({ count }) => (<h1>{count}</h1>);
 
@@ -24,19 +24,33 @@ const ResetButton = () => (
     </div>
 )
 
-const App = ({ count }) => (
+const ActionHistory = () => (
+    <ul>
+        <li>
+            <label>
+            ここに履歴を出したい
+            </label>
+        </li>
+    </ul>
+)
+
+const App = ({ count, history }) => (
     <div>
         <Counter count={count} />
         <IncButon />
         <DecButton />
         <ResetButton />
+        <ActionHistory history={history} />
     </div>
 );
 
-const getStores = () => [countStore];
+const getStores = () => [countStore,historyStore];
 
 const calculateState = () => {
-    return { count: countStore.getState() };
+    return { 
+        count: countStore.getState(),
+        history: historyStore.getState()
+    };
 };
 
 const AppContainer = Container.createFunctional(App, getStores, calculateState)
