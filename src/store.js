@@ -17,6 +17,10 @@ class CountStore extends ReduceStore {
                 const { value } = payload;
                 return state - value;
             }
+            case ActionTypes.RESET: {
+                const { value } = payload;
+                return value;
+            }
             default:
                 return state;
         }

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { increment,decrement } from './actions';
+import { increment,decrement, reset } from './actions';
 import { Container } from 'flux/utils';
 import { countStore } from './store';
 
@@ -18,11 +18,18 @@ const DecButton = () => (
     </div>
 )
 
+const ResetButton = () => (
+    <div>
+        <button onClick={reset}>リセットさん！！！</button>
+    </div>
+)
+
 const App = ({ count }) => (
     <div>
         <Counter count={count} />
         <IncButon />
         <DecButton />
+        <ResetButton />
     </div>
 );
 

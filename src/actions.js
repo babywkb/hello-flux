@@ -16,3 +16,11 @@ export const decrement = event => {
         payload: { value }
     });
 };
+
+export const reset = event => {
+    const value = 0;
+    CounterDispatcher.dispatch({
+        type: ActionTypes.RESET,
+        payload: { value }
+    });
+}
