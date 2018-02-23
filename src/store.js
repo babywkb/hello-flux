@@ -34,9 +34,14 @@ class HistoryStore extends ReduceStore {
     }
     reduce(state, { type, payload }) {
         switch (type) {
-            case ActionTypes.SHOWHISTORY: {
-                const { value } = payload;
-                return state.push(value);
+            case ActionTypes.INCREMENT: {
+                return state.push('INCREMENT');
+            }
+            case ActionTypes.DECREMENT: {
+                return state.push('DECREMENT');
+            }
+            case ActionTypes.RESET: {
+                return state.push('RESET');
             }
             default:
                 return state;
