@@ -24,13 +24,16 @@ const ResetButton = () => (
     </div>
 )
 
-const ActionHistory = () => (
+const ActionHistory = ({history}) => (
     <ul>
-        <li>
-            <label>
-            ここに履歴を出したい
-            </label>
-        </li>
+            {history.map(hst => (
+                <li>
+                    <label>
+                        {hst}
+                    </label>
+                </li>
+            ))}
+
     </ul>
 )
 

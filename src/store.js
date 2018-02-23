@@ -30,7 +30,7 @@ class CountStore extends ReduceStore {
 //履歴用Stoerを作る
 class HistoryStore extends ReduceStore {
     getInitialState() {
-        return 'なにもしてないよ';
+        return ['なにもしてないよ','あらよっと'];
     }
     reduce(state, { type, payload }) {
         switch (type) {

@@ -23,4 +23,12 @@ export const reset = event => {
         type: ActionTypes.RESET,
         payload: { value }
     });
+};
+
+export const showHistory = event => {
+    const value = '';
+    AppDispatcher.dispatch({
+        type: ActionTypes.RESET,
+        payload: { value }
+    });
 }
